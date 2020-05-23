@@ -4,7 +4,7 @@ pipeline {
         stage('Upload to AWS') {
             steps {
                 withAWS(region:'us-east-2',credentials:"AKIAWNM2NMQZHTUNCQGL") {
-                    s3Upload(file:'index.html', bucket:'jenkins-bucket-s3')
+                    s3Upload(file:'index.html', bucket:'jenkins-bucket-s3',path:'')
                 }
             steps {
                 sh 'echo "Hello World!"'
